@@ -79,4 +79,4 @@ Based on professional portfolio review:
 
 ---
 
-*Built with ❤️ and modern web technologies*
+*Built with modern web technologies*
