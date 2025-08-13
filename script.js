@@ -333,8 +333,9 @@ function animateCounters() {
     counters.forEach((counter) => {
         const target = parseInt(counter.getAttribute('data-count')) || 1;
         let current = 0;
-        const increment = target / 30; // Faster animation
+        const increment = target / 20; // Faster animation for mobile
         
+        // Set initial text to 0+
         counter.textContent = '0+';
         
         const timer = setInterval(() => {
@@ -345,7 +346,7 @@ function animateCounters() {
             } else {
                 counter.textContent = Math.floor(current) + '+';
             }
-        }, 50);
+        }, 80); // Slightly faster for mobile
     });
 }
 
@@ -357,12 +358,16 @@ if (aboutSection) {
     const aboutObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !countersAnimated) {
-                setTimeout(() => animateCounters(), 300);
+                // Small delay to ensure smooth animation
+                setTimeout(() => animateCounters(), 200);
                 countersAnimated = true;
                 aboutObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.3 });
+    }, { 
+        threshold: 0.2, // Lower threshold for mobile
+        rootMargin: '0px 0px -50px 0px' // Trigger earlier
+    });
     
     aboutObserver.observe(aboutSection);
 }
@@ -578,7 +583,7 @@ function initializeThemeToggle() {
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
     
-    // Check for saved theme preference or default to 'dark'
+    // Check for saved theme preference or default to 'dark' (primary theme)
     const currentTheme = localStorage.getItem('theme') || 'dark';
     body.setAttribute('data-theme', currentTheme);
     
@@ -588,31 +593,55 @@ function initializeThemeToggle() {
     // Update navbar for initial theme
     updateNavbar();
     
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    // Ensure theme toggle is visible and functional on mobile
+    if (themeToggle) {
+        themeToggle.style.display = 'flex';
+        themeToggle.style.zIndex = '1002';
         
-        body.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+            
+            // Update navbar when theme changes
+            updateNavbar();
+            
+            // Add a subtle animation to the toggle button
+            themeToggle.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                themeToggle.style.transform = 'scale(1)';
+            }, 150);
+            
+            // Force reflow for mobile devices
+            body.offsetHeight;
+        });
+    }
+    
+    // Add touch event support for mobile
+    if ('ontouchstart' in window) {
+        themeToggle.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(0.95)';
+        });
         
-        // Update navbar when theme changes
-        updateNavbar();
-        
-        // Add a subtle animation to the toggle button
-        themeToggle.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            themeToggle.style.transform = 'scale(1)';
-        }, 150);
-    });
+        themeToggle.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(1)';
+        });
+    }
 }
 
 function updateThemeIcon(theme) {
     const themeIcon = document.getElementById('theme-icon');
-    if (theme === 'light') {
-        themeIcon.className = 'fas fa-moon';
-    } else {
-        themeIcon.className = 'fas fa-sun';
+    if (themeIcon) {
+        if (theme === 'light') {
+            themeIcon.className = 'fas fa-moon';
+        } else {
+            themeIcon.className = 'fas fa-sun';
+        }
     }
 }
 
