@@ -2,18 +2,17 @@
 
 # 🚀 Prathamesh Gaikwad - Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Demo-blue?style=for-the-badge&logo=vercel)](https://my-portfolio-zlat.onrender.com/){:target="_blank"}
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930){:target="_blank"}
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/){:target="_blank"}
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Demo-blue?style=for-the-badge&logo=vercel)](https://my-portfolio-zlat.onrender.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/)
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:prathamesh.github@gmail.com)
 
 > **A modern, responsive portfolio showcasing full-stack development and AI/ML projects**  
 > Built with vanilla HTML, CSS, and JavaScript with smooth animations and professional design
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML){:target="_blank"}
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS){:target="_blank"}
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript){:target="_blank"}
-[![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/){:target="_blank"}
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 </div>
 
@@ -169,8 +168,8 @@
 
 [![Email](https://img.shields.io/badge/Email-prathamesh.github@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:prathamesh.github@gmail.com)
 [![Phone](https://img.shields.io/badge/Phone-%2B91%209324523783-green?style=for-the-badge&logo=phone)](tel:+919324523783)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-prathamesh--gaikwad-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/){:target="_blank"}
-[![GitHub](https://img.shields.io/badge/GitHub-prathamesh9930-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930){:target="_blank"}
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-prathamesh--gaikwad-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/)
+[![GitHub](https://img.shields.io/badge/GitHub-prathamesh9930-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
 
 ### **📍 Location**
 Panvel, Navi-Mumbai, Maharashtra, India
@@ -198,7 +197,7 @@ start_server.bat
 ```
 
 ### **Live Demo**
-Visit: [https://my-portfolio-zlat.onrender.com/](https://my-portfolio-zlat.onrender.com/){:target="_blank"}
+Visit: [https://my-portfolio-zlat.onrender.com/](https://my-portfolio-zlat.onrender.com/)
 
 </div>
 
@@ -210,7 +209,7 @@ Visit: [https://my-portfolio-zlat.onrender.com/](https://my-portfolio-zlat.onren
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=prathamesh9930&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=8B949E)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=prathamesh9930&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=8B949E&langs_count=3&exclude_repo=My-Portfolio)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=prathamesh9930&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=8B949E&langs_count=3&exclude_repo=My-Portfolio&exclude=Python)
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=prathamesh9930&theme=radical&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=58A6FF&currStreakNum=58A6FF&currStreakLabel=58A6FF&sideNums=58A6FF&sideLabels=58A6FF&dates=8B949E)
 
@@ -224,9 +223,9 @@ Visit: [https://my-portfolio-zlat.onrender.com/](https://my-portfolio-zlat.onren
 
 If you find this portfolio helpful, please consider giving it a ⭐ **star** on GitHub!
 
-[![GitHub Stars](https://img.shields.io/github/stars/prathamesh9930/My-Portfolio?style=social)](https://github.com/prathamesh9930/My-Portfolio){:target="_blank"}
-[![GitHub Forks](https://img.shields.io/badge/GitHub%20Forks-0-orange?style=social)](https://github.com/prathamesh9930/My-Portfolio){:target="_blank"}
-[![GitHub Issues](https://img.shields.io/badge/GitHub%20Issues-0-green?style=social)](https://github.com/prathamesh9930/My-Portfolio){:target="_blank"}
+[![GitHub Stars](https://img.shields.io/github/stars/prathamesh9930/My-Portfolio?style=social)](https://github.com/prathamesh9930/My-Portfolio)
+[![GitHub Forks](https://img.shields.io/badge/GitHub%20Forks-0-orange?style=social)](https://github.com/prathamesh9930/My-Portfolio)
+[![GitHub Issues](https://img.shields.io/badge/GitHub%20Issues-0-green?style=social)](https://github.com/prathamesh9930/My-Portfolio)
 
 ### **🤝 Contributing**
 Feel free to open issues or submit pull requests for improvements!
@@ -239,9 +238,9 @@ Feel free to open issues or submit pull requests for improvements!
 
 **Built with ❤️ using modern web technologies**
 
-[![Made with Love](https://img.shields.io/badge/Made%20with-Love-red?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio){:target="_blank"}
-[![Open Source](https://img.shields.io/badge/Open%20Source-Yes-green?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio){:target="_blank"}
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio){:target="_blank"}
+[![Made with Love](https://img.shields.io/badge/Made%20with-Love-red?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
+[![Open Source](https://img.shields.io/badge/Open%20Source-Yes-green?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
 
 ---
 
