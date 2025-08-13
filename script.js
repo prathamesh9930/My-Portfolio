@@ -246,6 +246,86 @@ function initializeAnimations() {
     });
 }
 
+// Contact form specific animations
+function initContactFormAnimations() {
+    const formFields = document.querySelectorAll('.form-field-animate');
+    const contactSection = document.querySelector('.contact');
+    
+    // Create observer for contact section
+    const contactObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                
+                // Animate form fields with staggered delay
+                formFields.forEach((field, index) => {
+                    setTimeout(() => {
+                        field.classList.add('revealed');
+                    }, index * 200);
+                });
+                
+                contactObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    if (contactSection) {
+        contactObserver.observe(contactSection);
+    }
+    
+    // Enhanced form field interactions
+    formFields.forEach(field => {
+        const input = field.querySelector('input, textarea');
+        const label = field.querySelector('label');
+        
+        if (input && label) {
+            // Focus effects
+            input.addEventListener('focus', () => {
+                field.style.transform = 'translateX(5px)';
+                label.style.color = 'var(--text-accent)';
+            });
+            
+            input.addEventListener('blur', () => {
+                field.style.transform = 'translateX(0)';
+                if (!input.value) {
+                    label.style.color = '';
+                }
+            });
+            
+            // Input validation animations
+            input.addEventListener('input', () => {
+                if (input.checkValidity()) {
+                    field.classList.add('valid');
+                    field.classList.remove('invalid');
+                } else if (input.value) {
+                    field.classList.add('invalid');
+                    field.classList.remove('valid');
+                }
+            });
+        }
+    });
+    
+    // Send button special effects
+    const sendButton = document.querySelector('.btn-send-animate');
+    if (sendButton) {
+        sendButton.addEventListener('mouseenter', () => {
+            sendButton.style.animationPlayState = 'running';
+        });
+        
+        sendButton.addEventListener('mouseleave', () => {
+            sendButton.style.animationPlayState = 'paused';
+        });
+        
+        // Click effect
+        sendButton.addEventListener('click', () => {
+            sendButton.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                sendButton.style.transform = '';
+            }, 150);
+        });
+    }
+}
+
 // Optimized counter animation
 function animateCounters() {
     const counters = document.querySelectorAll('.stat h4');
@@ -478,6 +558,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeProjectCards();
     initializeThemeToggle();
+    initContactFormAnimations();
     
     // Update active nav on scroll
     window.addEventListener('scroll', () => {
@@ -497,11 +578,11 @@ function initializeThemeToggle() {
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
     
-    // Check for saved theme preference or default to 'light'
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference or default to 'dark'
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     body.setAttribute('data-theme', currentTheme);
     
-    // Update icon based on current theme
+    // Update icon based on current theme (dark is default, so show sun icon)
     updateThemeIcon(currentTheme);
     
     // Update navbar for initial theme
@@ -509,7 +590,7 @@ function initializeThemeToggle() {
     
     themeToggle.addEventListener('click', () => {
         const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         
         body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
@@ -528,10 +609,10 @@ function initializeThemeToggle() {
 
 function updateThemeIcon(theme) {
     const themeIcon = document.getElementById('theme-icon');
-    if (theme === 'dark') {
-        themeIcon.className = 'fas fa-sun';
-    } else {
+    if (theme === 'light') {
         themeIcon.className = 'fas fa-moon';
+    } else {
+        themeIcon.className = 'fas fa-sun';
     }
 }
 
