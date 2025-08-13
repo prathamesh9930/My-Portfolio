@@ -100,24 +100,37 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
+console.log('Mobile navigation elements:', { hamburger, navMenu, navLinks: navLinks.length });
+
 function mobileMenu() {
+    console.log('Mobile menu toggled');
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
     document.body.classList.toggle('menu-open');
 }
 
 function closeMenu() {
+    console.log('Closing mobile menu');
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
     document.body.classList.remove('menu-open');
 }
 
 if (hamburger && navMenu) {
-    hamburger.addEventListener('click', mobileMenu);
+    console.log('Setting up mobile navigation');
+    
+    hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        mobileMenu();
+    });
     
     // Close menu when clicking on a nav link
     navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', (e) => {
+            console.log('Nav link clicked, closing menu');
+            closeMenu();
+        });
     });
     
     // Close menu when clicking outside
@@ -126,23 +139,18 @@ if (hamburger && navMenu) {
             closeMenu();
         }
     });
-}
-
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', String(!expanded));
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
     });
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    }));
+} else {
+    console.error('Mobile navigation elements not found:', { hamburger, navMenu });
 }
+
+// Remove duplicate mobile navigation code - handled above
 
 // Optimized Navbar scroll effect with theme support
 let lastScrollY = 0;
@@ -328,12 +336,21 @@ function initContactFormAnimations() {
 
 // Optimized counter animation
 function animateCounters() {
-    const counters = document.querySelectorAll('.stat h4');
+    const counters = document.querySelectorAll('.stat h4[data-count]');
+    
+    if (counters.length === 0) {
+        console.log('No counters found');
+        return;
+    }
+    
+    console.log('Found counters:', counters.length);
     
     counters.forEach((counter) => {
         const target = parseInt(counter.getAttribute('data-count')) || 1;
         let current = 0;
         const increment = target / 20; // Faster animation for mobile
+        
+        console.log('Animating counter:', target);
         
         // Set initial text to 0+
         counter.textContent = '0+';
@@ -355,9 +372,12 @@ const aboutSection = document.querySelector('.about');
 let countersAnimated = false;
 
 if (aboutSection) {
+    console.log('About section found, setting up observer');
+    
     const aboutObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !countersAnimated) {
+                console.log('About section visible, animating counters');
                 // Small delay to ensure smooth animation
                 setTimeout(() => animateCounters(), 200);
                 countersAnimated = true;
@@ -365,11 +385,13 @@ if (aboutSection) {
             }
         });
     }, { 
-        threshold: 0.2, // Lower threshold for mobile
-        rootMargin: '0px 0px -50px 0px' // Trigger earlier
+        threshold: 0.1, // Lower threshold for mobile
+        rootMargin: '0px 0px -100px 0px' // Trigger earlier
     });
     
     aboutObserver.observe(aboutSection);
+} else {
+    console.log('About section not found');
 }
 
 // Optimized Contact form handling
@@ -583,8 +605,14 @@ function initializeThemeToggle() {
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
     
+    console.log('Initializing theme toggle');
+    console.log('Theme toggle element:', themeToggle);
+    console.log('Theme icon element:', themeIcon);
+    
     // Check for saved theme preference or default to 'dark' (primary theme)
     const currentTheme = localStorage.getItem('theme') || 'dark';
+    console.log('Current theme from localStorage:', currentTheme);
+    
     body.setAttribute('data-theme', currentTheme);
     
     // Update icon based on current theme (dark is default, so show sun icon)
@@ -598,9 +626,16 @@ function initializeThemeToggle() {
         themeToggle.style.display = 'flex';
         themeToggle.style.zIndex = '1002';
         
-        themeToggle.addEventListener('click', () => {
+        themeToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('Theme toggle clicked');
+            
             const currentTheme = body.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            console.log('Switching from', currentTheme, 'to', newTheme);
             
             body.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
@@ -618,19 +653,30 @@ function initializeThemeToggle() {
             // Force reflow for mobile devices
             body.offsetHeight;
         });
+        
+        // Add touch event support for mobile
+        if ('ontouchstart' in window) {
+            console.log('Adding touch events for mobile');
+            
+            themeToggle.addEventListener('touchstart', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(0.95)';
+            });
+            
+            themeToggle.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                this.style.transform = 'scale(1)';
+            });
+        }
+    } else {
+        console.error('Theme toggle element not found!');
     }
     
-    // Add touch event support for mobile
-    if ('ontouchstart' in window) {
-        themeToggle.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-            this.style.transform = 'scale(0.95)';
-        });
-        
-        themeToggle.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            this.style.transform = 'scale(1)';
-        });
+    if (themeIcon) {
+        console.log('Theme icon found, updating to:', currentTheme);
+        updateThemeIcon(currentTheme);
+    } else {
+        console.error('Theme icon element not found!');
     }
 }
 

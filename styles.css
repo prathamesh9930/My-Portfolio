@@ -2718,6 +2718,9 @@ section {
         cursor: pointer;
         z-index: 1001;
         position: relative;
+        background: none;
+        border: none;
+        padding: 0;
     }
 
     .hamburger .bar {
@@ -2726,7 +2729,7 @@ section {
         height: 3px;
         margin: 3px auto;
         transition: all 0.3s ease-in-out;
-        background-color: var(--text-color);
+        background-color: var(--text-primary);
         border-radius: 2px;
     }
 
@@ -2735,7 +2738,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background-color: rgba(255, 255, 255, 0.98);
+        background-color: var(--bg-primary);
         width: 100%;
         text-align: center;
         transition: 0.3s ease-in-out;
@@ -2744,6 +2747,9 @@ section {
         z-index: 999;
         height: calc(100vh - 70px);
         overflow-y: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-menu.active {
