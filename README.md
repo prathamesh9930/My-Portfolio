@@ -236,7 +236,7 @@ Feel free to open issues or submit pull requests for improvements!
 
 <div align="center">
 
-**Built with ❤️ using modern web technologies**
+**Built using modern web technologies**
 
 [![Made with Love](https://img.shields.io/badge/Made%20with-Love-red?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
 [![Open Source](https://img.shields.io/badge/Open%20Source-Yes-green?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
