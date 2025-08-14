@@ -2,10 +2,10 @@
 
 # 🚀 Prathamesh Gaikwad - Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Demo-blue?style=for-the-badge&logo=vercel)](https://prathamesh-portfolio-09.netlify.app/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Demo-red?style=for-the-badge&logo=vercel)](https://prathamesh-portfolio-09.netlify.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/)
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:prathamesh.github@gmail.com)
+[![Email](https://img.shields.io/badge/Email-Contact-yellow?style=for-the-badge&logo=gmail)](mailto:prathamesh.github@gmail.com)
 
 > **A modern, responsive portfolio showcasing full-stack development and AI/ML projects**  
 > Built with vanilla HTML, CSS, and JavaScript with smooth animations and professional design
@@ -167,9 +167,9 @@
 <div align="center">
 
 [![Email](https://img.shields.io/badge/Email-prathamesh.github@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:prathamesh.github@gmail.com)
-[![Phone](https://img.shields.io/badge/Phone-%2B91%209324523783-green?style=for-the-badge&logo=phone)](tel:+919324523783)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-prathamesh--gaikwad-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/)
-[![GitHub](https://img.shields.io/badge/GitHub-prathamesh9930-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
+[![Phone](https://img.shields.io/badge/Phone-%2B91%209324523783-blue?style=for-the-badge&logo=phone)](tel:+919324523783)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-prathamesh--gaikwad-yellow?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/)
+[![GitHub](https://img.shields.io/badge/GitHub-prathamesh9930-violet?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
 
 ### **📍 Location**
 Panvel, Navi-Mumbai, Maharashtra, India
@@ -239,13 +239,14 @@ Feel free to open issues or submit pull requests for improvements!
 **Built using modern web technologies**
 
 [![Made with Love](https://img.shields.io/badge/Made%20with-Love-red?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
-[![Open Source](https://img.shields.io/badge/Open%20Source-Yes-green?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
+[![Open Source](https://img.shields.io/badge/Open%20Source-Yes-blue?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](https://github.com/prathamesh9930/My-Portfolio)
 
 ---
 
 **© 2025 Prathamesh Gaikwad. All rights reserved.**
 
 </div>
+
 
 
