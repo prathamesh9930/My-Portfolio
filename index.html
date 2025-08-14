@@ -57,39 +57,38 @@
             }
 
             /* About numbers static on mobile */
-            .about-stats h4[data-count]::after {
-                content: attr(data-count) "+";
-                display: inline;
-            }
             .about-stats h4[data-count] {
                 color: inherit;
                 font-size: 2rem;
                 animation: none !important;
-            }
-            .about-stats h4[data-count]::before {
-                content: "";
             }
 
             /* Certification grid fix */
             .certificates-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 0.5rem !important;
+                gap: 0.4rem !important;
                 overflow-x: auto !important;
             }
             .certificate-card {
                 min-width: 0 !important;
                 width: 100% !important;
-                max-width: 140px !important;
-                padding: 0.5rem !important;
-                font-size: 0.85rem !important;
+                max-width: 110px !important;
+                padding: 0.2rem !important;
+                font-size: 0.7rem !important;
                 box-sizing: border-box !important;
+                box-shadow: none !important;
+                transition: none !important;
+            }
+            .certificate-card:hover {
+                transform: none !important;
+                box-shadow: none !important;
             }
             .certificate-card h3 {
-                font-size: 1rem !important;
+                font-size: 0.8rem !important;
             }
             .certificate-card p {
-                font-size: 0.8rem !important;
+                font-size: 0.65rem !important;
             }
 
             /* Remove timeline line and dots in experience */
