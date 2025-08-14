@@ -2,7 +2,7 @@
 
 # 🚀 Prathamesh Gaikwad - Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Demo-blue?style=for-the-badge&logo=vercel)](https://my-portfolio-zlat.onrender.com/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Demo-blue?style=for-the-badge&logo=vercel)](https://prathamesh-portfolio-09.netlify.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/)
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail)](mailto:prathamesh.github@gmail.com)
@@ -197,7 +197,7 @@ start_server.bat
 ```
 
 ### **Live Demo**
-Visit: [https://my-portfolio-zlat.onrender.com/](https://my-portfolio-zlat.onrender.com/)
+Visit: [https://my-portfolio-zlat.onrender.com/](https://prathamesh-portfolio-09.netlify.app/)
 
 </div>
 
@@ -247,3 +247,4 @@ Feel free to open issues or submit pull requests for improvements!
 **© 2025 Prathamesh Gaikwad. All rights reserved.**
 
 </div>
+
