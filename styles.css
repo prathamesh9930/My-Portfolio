@@ -1,3 +1,114 @@
+/* Hamburger animation for Aryan-style mobile navbar */
+@media (max-width: 900px) {
+    .mobile-navbar-toggle.open .mobile-navbar-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .mobile-navbar-toggle.open .mobile-navbar-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-navbar-toggle.open .mobile-navbar-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .mobile-navbar-bar {
+        transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    }
+}
+/* Aryan-style Mobile Navbar (customized) */
+@media (max-width: 900px) {
+    .mobile-navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 2001;
+        background: transparent;
+        box-shadow: none;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+        transition: box-shadow 0.3s;
+    }
+    .mobile-navbar-header {
+        background: linear-gradient(90deg, #232946 60%, #6c47ff 100%);
+        box-shadow: 0 2px 12px 0 rgba(60,60,90,0.13);
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .mobile-navbar-logo {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 12px #232946, 0 0px 2px #6c47ff;
+    }
+    .mobile-navbar-toggle {
+        background: none;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 3100;
+        margin-left: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+    }
+    .mobile-navbar-bar {
+        width: 28px;
+        height: 3px;
+        background: #e0e7ff;
+        border-radius: 2px;
+        transition: all 0.3s;
+    }
+    .mobile-navbar-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        background: rgba(24,24,27,0.98);
+        box-shadow: 0 8px 24px 0 rgba(60,60,90,0.13);
+        border-radius: 0 0 18px 18px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px);
+        transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+        z-index: 3001;
+    }
+        .mobile-navbar-menu.open {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            transform: translateY(0) !important;
+            display: flex !important;
+        }
+    .mobile-navbar-menu li {
+        border-bottom: 1px solid #232946;
+    }
+    .mobile-navbar-menu li:last-child {
+        border-bottom: none;
+    }
+    .mobile-navbar-menu a {
+        display: block;
+        color: #e0e7ff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
+        transition: background 0.2s, color 0.2s;
+    }
+    .mobile-navbar-menu a:hover {
+        background: #6c47ff;
+        color: #fff;
+    }
+}
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -230,6 +341,7 @@ a:active {
 }
 
 /* Navigation */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -238,8 +350,10 @@ a:active {
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
-    transition: all 0.3s ease;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.4s cubic-bezier(.4,0,.2,1), opacity 0.4s cubic-bezier(.4,0,.2,1);
+    will-change: transform, opacity;
 }
+
 
 [data-theme="dark"] .navbar {
     background: rgba(26, 26, 46, 0.95) !important;
@@ -3161,6 +3275,13 @@ section {
 
 /* Extra Small Mobile Devices */
 @media (max-width: 480px) {
+    .mobile-navbar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        z-index: 2001;
+    }
     .container {
         padding: 0 15px;
     }

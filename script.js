@@ -95,73 +95,55 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-
-console.log('Mobile navigation elements:', { hamburger, navMenu, navLinks: navLinks.length });
-
-function mobileMenu() {
-    console.log('Mobile menu toggled');
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
+// Unified Navbar Show/Hide and Mobile Menu Toggle
+function handleNavbars() {
+    const mainNavbar = document.getElementById('mainNavbar');
+    const mobileNavbar = document.getElementById('mobileNavbar');
+    if (window.innerWidth <= 900) {
+        if (mainNavbar) mainNavbar.style.display = 'none';
+        if (mobileNavbar) mobileNavbar.style.display = 'block';
+    } else {
+        if (mainNavbar) mainNavbar.style.display = 'block';
+        if (mobileNavbar) mobileNavbar.style.display = 'none';
+    }
 }
 
-function closeMenu() {
-    console.log('Closing mobile menu');
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-    document.body.classList.remove('menu-open');
-}
+window.addEventListener('resize', handleNavbars);
+document.addEventListener('DOMContentLoaded', handleNavbars);
 
-if (hamburger && navMenu) {
-    console.log('Setting up mobile navigation');
-    
-    hamburger.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        mobileMenu();
-    });
-    
-    // Close menu when clicking on a nav link
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            console.log('Nav link clicked, closing menu');
-            closeMenu();
+// Mobile menu toggle logic (only attach once)
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.getElementById('mobile-navbar-toggle');
+    const mobileMenu = document.getElementById('mobile-navbar-menu');
+    if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            mobileMenu.classList.toggle('open');
+            mobileToggle.classList.toggle('open');
         });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            closeMenu();
-        }
-    });
-    
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeMenu();
-        }
-    });
-} else {
-    console.error('Mobile navigation elements not found:', { hamburger, navMenu });
-}
+        // Close menu on link click (and animate hamburger back)
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileToggle.classList.remove('open');
+            });
+        });
+    }
+});
 
-// Remove duplicate mobile navigation code - handled above
 
 // Optimized Navbar scroll effect with theme support
-let lastScrollY = 0;
+
+// Sticky navbar: always visible, never hides on scroll
+let ticking = false;
 const navbar = document.querySelector('.navbar');
 
 function updateNavbar() {
     if (!navbar) return;
-    
     const scrollY = window.scrollY;
     const isDarkTheme = document.body.getAttribute('data-theme') === 'dark';
-    
+
+    // Shadow and background on scroll
     if (scrollY > 100) {
         navbar.classList.add('scrolled');
         if (isDarkTheme) {
@@ -182,19 +164,26 @@ function updateNavbar() {
         navbar.style.boxShadow = 'none';
         navbar.style.backdropFilter = 'blur(10px)';
     }
-    
-    lastScrollY = scrollY;
 }
 
 // Throttled scroll listener
-let ticking = false;
 window.addEventListener('scroll', () => {
     if (!ticking) {
         requestAnimationFrame(() => {
             updateNavbar();
+            updateScrollButton();
+            updateActiveNav();
             ticking = false;
         });
         ticking = true;
+    }
+});
+
+// Initial state: ensure navbar is always visible
+window.addEventListener('DOMContentLoaded', () => {
+    if (navbar) {
+        navbar.classList.remove('animated-hide');
+        navbar.classList.remove('animated-show');
     }
 });
 

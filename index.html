@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prathamesh Gaikwad - Full Stack Developer & AI Enthusiast</title>
+    <title>Prathamesh Gaikwad - Portfolio</title>
     <meta name="description" content="Full-Stack Developer specializing in React/Next.js and AI/ML. Built production apps, AI tools, and secure data systems. Open to SDE/ML roles.">
     <meta name="keywords" content="Full Stack Developer, AI/ML Engineer, React Developer, Python Developer, JavaScript, Portfolio, Software Engineer">
     <meta name="author" content="Prathamesh Gaikwad">
@@ -21,6 +21,64 @@
     <link rel="stylesheet" href="styles.css">
         <style>
         @media (max-width: 480px) {
+            .nav-menu {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                width: 100vw !important;
+                background: var(--bg-primary, #18181b) !important;
+                position: static !important;
+                gap: 0.7rem !important;
+                padding-right: 1rem !important;
+                z-index: 2001 !important;
+            }
+            .nav-menu .nav-link {
+                color: #e0e7ff !important;
+                font-size: 1.1rem !important;
+                padding: 0.5rem 0.3rem !important;
+                text-shadow: 0 1px 4px #232946;
+            }
+            /* removed duplicate .navbar and .nav-logo rules for mobile, see unified rules below */
+            /* Fix certification card overflow and remove hover/overlay on mobile */
+            .certificates-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.3rem !important;
+            }
+            .certificate-card {
+                max-width: 100% !important;
+                min-width: 0 !important;
+                width: 100% !important;
+                padding: 0.3rem 0.2rem 0.7rem 0.2rem !important;
+                margin: 0 !important;
+                box-shadow: 0 2px 8px 0 rgba(60,60,90,0.08) !important;
+                border-radius: 14px !important;
+                background: #fff !important;
+                color: #222 !important;
+                overflow: hidden !important;
+                position: relative !important;
+            }
+            .certificate-card .btn, .certificate-card .btn-primary {
+                width: 100% !important;
+                min-width: 0 !important;
+                font-size: 0.8rem !important;
+                padding: 0.5rem 0 !important;
+                margin: 0.2rem 0 0 0 !important;
+                border-radius: 8px !important;
+            }
+            .certificate-card .project-overlay, .certificate-card:hover .project-overlay {
+                display: none !important;
+            }
+            .certificate-card:hover {
+                box-shadow: 0 2px 8px 0 rgba(60,60,90,0.08) !important;
+                transform: none !important;
+            }
+            .certificate-card h3 {
+                font-size: 0.9rem !important;
+            }
+            .certificate-card p {
+                font-size: 0.7rem !important;
+            }
             /* Fade-in animation for sections */
             .mobile-fade-in {
                 opacity: 0;
@@ -46,8 +104,15 @@
             .certificate-card {
                 border-radius: 14px !important;
                 box-shadow: 0 2px 12px 0 rgba(60,60,90,0.10) !important;
-                background: #fff !important;
-                color: #222 !important;
+                background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%) !important;
+                color: #232946 !important;
+                border: 1.5px solid #b4b4e6 !important;
+                transition: background 0.3s, color 0.3s;
+            }
+            body.dark-theme .certificate-card {
+                background: linear-gradient(135deg, #232946 0%, #3b3b5c 100%) !important;
+                color: #e0e7ff !important;
+                border: 1.5px solid #44446a !important;
             }
 
             /* Section headers: bolder, more colorful */
@@ -77,29 +142,12 @@
                 box-shadow: 0 2px 8px 0 rgba(60,60,90,0.08) !important;
             }
 
-            /* Navbar mobile menu fix */
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100vw;
-                background: var(--bg-primary, #18181b);
-                flex-direction: column;
-                z-index: 1000;
-            }
-            .nav-menu.active {
-                display: flex;
+            /* Navbar mobile menu fix - removed duplicate .nav-menu rule */
+            .nav-controls {
+                display: none !important;
             }
             .hamburger {
-                display: flex !important;
-                flex-direction: column;
-                cursor: pointer;
-                z-index: 1100;
-            }
-            .nav-controls {
-                display: flex;
-                align-items: center;
+                display: none !important;
             }
 
             /* About numbers static on mobile */
@@ -166,6 +214,161 @@
                 display: none !important;
             }
         }
+        @media (max-width: 480px) {
+            /* Mobile Navbar Enhancements */
+            .mobile-navbar {
+                background: linear-gradient(90deg, #232946 60%, #6c47ff 100%);
+                box-shadow: 0 2px 12px 0 rgba(26, 26, 190, 0.13);
+                border-bottom-left-radius: 18px;
+                border-bottom-right-radius: 18px;
+                padding-bottom: 0.2rem;
+            }
+        }
+            .mobile-navbar-header {
+                padding: 0.3rem 0.2rem 0.2rem 0.2rem;
+            }
+            .mobile-navbar-logo {
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: #e0e7ff;
+                letter-spacing: 1px;
+                text-shadow: 0 2px 12px #232946, 0 0px 2px #6c47ff;
+            }
+            .mobile-navbar-toggle {
+                background: none;
+                border: none;
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                cursor: pointer;
+                z-index: 3100;
+                margin-left: 0.5rem;
+            }
+            .mobile-navbar-bar {
+                width: 28px;
+                height: 3px;
+                background: #e0e7ff;
+                border-radius: 2px;
+                transition: all 0.3s cubic-bezier(.4,0,.2,1);
+            }
+            .mobile-navbar-menu {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                background: rgba(24,24,27,0.98);
+                box-shadow: 0 8px 24px 0 rgba(60,60,90,0.13);
+                border-radius: 0 0 18px 18px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100vw;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-20px);
+                transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+                z-index: 3001;
+            }
+            .mobile-navbar-menu.open {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
+            }
+            .mobile-navbar-menu li {
+                border-bottom: 1px solid #232946;
+            }
+            .mobile-navbar-menu li:last-child {
+                border-bottom: none;
+            }
+            .mobile-navbar-menu a {
+                display: block;
+                color: #e0e7ff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                padding: 1rem 1.5rem;
+                transition: background 0.2s, color 0.2s;
+            }
+            .mobile-navbar-menu a:hover {
+                background: #6c47ff;
+                color: #fff;
+            }
+            .mobile-social-links {
+                display: flex;
+                justify-content: center;
+                gap: 1.2rem;
+                padding: 0.7rem 0 0.5rem 0;
+            }
+            .mobile-social-links a {
+                color: #e0e7ff;
+                font-size: 1.5rem;
+                transition: color 0.2s, transform 0.2s;
+            }
+            .mobile-social-links a:hover {
+                color: #6c47ff;
+                transform: scale(1.18);
+            }
+            /* Back to Top Button Enhancements */
+            #backToTop {
+                background: linear-gradient(135deg, #6c47ff 0%, #232946 100%);
+                color: #fff;
+                border: none;
+                border-radius: 50%;
+                width: 48px;
+                height: 48px;
+                font-size: 1.5rem;
+                box-shadow: 0 2px 8px rgba(60,60,90,0.13);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            }
+            #backToTop:active {
+                background: #6c47ff;
+                box-shadow: 0 4px 16px rgba(60,60,90,0.18);
+                transform: scale(0.95);
+            }
+        </style>
+        <style>
+        @media (max-width: 480px) {
+            .certificate-card h3,
+            .certificate-card p {
+                color: #18181b !important;
+                text-shadow: none !important;
+            }
+        }
+        </style>
+        <style>
+        @media (max-width: 480px) {
+            .section-title {
+                color: #fff !important;
+                text-shadow: 0 2px 8px #23294633;
+            }
+        }
+        </style>
+        <style>
+        @media (max-width: 480px) {
+                .certificates-grid {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 0.7rem !important;
+                    width: 90vw !important;
+                    max-width: 100vw !important;
+                    margin: 0 auto !important;
+                    padding: 0 0.5rem !important;
+                    overflow-x: hidden !important;
+                }
+                    .certificate-card {
+                        min-width: 0 !important;
+                        max-width: 100% !important;
+                        width: 100% !important;
+                        margin: 0 !important;
+                        box-sizing: border-box !important;
+                        overflow: visible !important;
+                        font-size: 0.85rem !important;
+                        padding: 0.5rem 0.15rem 0.7rem 0.15rem !important;
+                    }
+        }
         </style>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -176,67 +379,55 @@
     <!-- Lenis Smooth Scroll -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Prathamesh Gaikwad",
-      "jobTitle": "Full Stack Developer",
-      "url": "https://your-domain.com",
-      "image": "https://your-domain.com/assets/prathamesh.jpeg",
-      "description": "Full-Stack Developer specializing in React/Next.js and AI/ML. Built production apps, AI tools, and secure data systems.",
-      "sameAs": [
-        "https://github.com/prathamesh9930",
-        "https://www.linkedin.com/in/prathamesh-gaikwad",
-        "https://www.instagram.com/__xr__prathamesh__/"
-      ],
-      "knowsAbout": ["JavaScript", "Python", "React", "Next.js", "AI", "Machine Learning", "Full Stack Development"],
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Bharati Vidyapeeth Deemed University"
-      }
-    }
-    </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2 class="animated-name">Prathamesh Gaikwad</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="nav-controls">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light theme">
-                    <i class="fas fa-sun" id="theme-icon"></i>
-                </button>
-                <div class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+        <!-- Desktop Navbar -->
+        <nav class="navbar" id="mainNavbar" style="position:sticky; top:0; z-index:2001;">
+            <div class="nav-container" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                <div class="nav-logo" style="display: flex; align-items: center;">
+                    <h2 class="animated-name" style="font-size: 1.2rem; color: #fff; margin: 0; padding: 0.5rem 1rem;">Prathamesh Gaikwad</h2>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light theme" style="display: flex; align-items: center; justify-content: center; background: none; border: none; color: #fff; font-size: 1.3rem; margin-right: 1rem; cursor: pointer;">
+                        <i class="fas fa-sun" id="theme-icon" style="color: #fff;"></i>
+                    </button>
+                    <style>
+                    /* Make the moon icon dark for visibility */
+                    #theme-icon.fa-moon { color: #232946 !important; }
+                    </style>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+        <!-- Mobile Navbar (only visible on mobile) -->
+        <nav class="mobile-navbar" id="mobileNavbar">
+            <div class="mobile-navbar-header">
+                <h2 class="animated-name" style="font-size: 1.2rem; color: #fff; margin: 0; padding: 0.5rem 1rem;">Prathamesh Gaikwad</h2>
+                <button class="mobile-navbar-toggle" id="mobile-navbar-toggle" aria-label="Open menu">
+                    <span class="mobile-navbar-bar"></span>
+                    <span class="mobile-navbar-bar"></span>
+                    <span class="mobile-navbar-bar"></span>
+                </button>
+            </div>
+            <ul class="mobile-navbar-menu" id="mobile-navbar-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    <!-- Back to Top Button (mobile only) -->
+    <button id="backToTop" aria-label="Back to top" style="display:none;position:fixed;bottom:24px;right:24px;z-index:9999;background:#6c47ff;color:#fff;border:none;border-radius:50%;width:48px;height:48px;font-size:1.5rem;box-shadow:0 2px 8px rgba(60,60,90,0.13);cursor:pointer;">↑</button>
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -921,58 +1112,6 @@
     </footer>
 
     <script src="script.js" defer></script>
-        <script>
-        // Mobile fade-in animation for sections
-        if (window.innerWidth <= 480) {
-            document.addEventListener('DOMContentLoaded', function() {
-                const fadeEls = document.querySelectorAll('section, .about-content-full, .container');
-                fadeEls.forEach(el => el.classList.add('mobile-fade-in'));
-                const revealOnScroll = () => {
-                    fadeEls.forEach(el => {
-                        const rect = el.getBoundingClientRect();
-                        if (rect.top < window.innerHeight - 40) {
-                            el.classList.add('visible');
-                        }
-                    });
-                };
-                window.addEventListener('scroll', revealOnScroll);
-                revealOnScroll();
-            });
-        }
-        </script>
-        <script>
-        // Set dark theme as default on mobile
-        if (window.innerWidth <= 480) {
-            document.body.classList.add('dark-theme');
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hamburger menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            if (hamburger && navMenu) {
-                hamburger.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
-                });
-            }
-
-            // Theme toggle fix for all devices
-            const themeToggle = document.getElementById('theme-toggle');
-            if (themeToggle) {
-                themeToggle.addEventListener('click', function() {
-                    document.body.classList.toggle('dark-theme');
-                    // Optionally update icon
-                    const icon = document.getElementById('theme-icon');
-                    if (icon) {
-                        icon.classList.toggle('fa-moon');
-                        icon.classList.toggle('fa-sun');
-                    }
-                });
-            }
-
-            // About section numbers are now static in HTML for all devices.
-        });
-        </script>
     
     <!-- Performance monitoring (optional - remove if not needed) -->
     <script>
