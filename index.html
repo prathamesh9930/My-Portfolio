@@ -332,6 +332,33 @@
         </style>
         <style>
         @media (max-width: 480px) {
+            /* Reduce animation and transition for smoother mobile experience */
+            * {
+                transition-duration: 0.15s !important;
+                animation-duration: 0.18s !important;
+                will-change: auto !important;
+            }
+            .animate-on-scroll,
+            .reveal-on-scroll,
+            .stagger-1, .stagger-2, .stagger-3, .stagger-4, .stagger-5 {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .animated-image,
+            .scroll-indicator {
+                display: none !important;
+            }
+        }
+        @media (max-width: 480px) and (prefers-reduced-motion: reduce) {
+            * {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+        </style>
+        <style>
+        @media (max-width: 480px) {
             .certificate-card h3,
             .certificate-card p {
                 color: #18181b !important;
