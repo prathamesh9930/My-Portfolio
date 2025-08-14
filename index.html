@@ -31,6 +31,62 @@
     <link rel="stylesheet" href="styles.css">
         <style>
         @media (max-width: 480px) {
+            /* Fade-in animation for sections */
+            .mobile-fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+            }
+            .mobile-fade-in.visible {
+                opacity: 1;
+                transform: none;
+            }
+
+            /* Slightly larger font and spacing for readability */
+            body {
+                font-size: 1.08rem;
+                line-height: 1.7;
+            }
+            section, .about-content-full, .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            /* Certification card: shadow, border-radius, depth */
+            .certificate-card {
+                border-radius: 14px !important;
+                box-shadow: 0 2px 12px 0 rgba(60,60,90,0.10) !important;
+                background: #fff !important;
+                color: #222 !important;
+            }
+
+            /* Section headers: bolder, more colorful */
+            .section-title {
+                color: #6c47ff !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.5px;
+                font-size: 2rem !important;
+            }
+
+            /* Button touch feedback */
+            .btn, button, .btn-primary {
+                transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            }
+            .btn:active, button:active, .btn-primary:active {
+                background: #6c47ff !important;
+                color: #fff !important;
+                box-shadow: 0 2px 8px 0 rgba(60,60,90,0.13) !important;
+            }
+
+            /* Sticky navbar for mobile */
+            .navbar {
+                position: sticky !important;
+                top: 0;
+                z-index: 2000;
+                background: var(--bg-primary, #18181b) !important;
+                box-shadow: 0 2px 8px 0 rgba(60,60,90,0.08) !important;
+            }
+
             /* Navbar mobile menu fix */
             .nav-menu {
                 display: none;
@@ -875,6 +931,25 @@
     </footer>
 
     <script src="script.js" defer></script>
+        <script>
+        // Mobile fade-in animation for sections
+        if (window.innerWidth <= 480) {
+            document.addEventListener('DOMContentLoaded', function() {
+                const fadeEls = document.querySelectorAll('section, .about-content-full, .container');
+                fadeEls.forEach(el => el.classList.add('mobile-fade-in'));
+                const revealOnScroll = () => {
+                    fadeEls.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        if (rect.top < window.innerHeight - 40) {
+                            el.classList.add('visible');
+                        }
+                    });
+                };
+                window.addEventListener('scroll', revealOnScroll);
+                revealOnScroll();
+            });
+        }
+        </script>
         <script>
         // Set dark theme as default on mobile
         if (window.innerWidth <= 480) {
