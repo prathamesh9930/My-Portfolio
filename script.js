@@ -131,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Remove duplicate mobile navigation code - handled above
 
 // Optimized Navbar scroll effect with theme support
 
