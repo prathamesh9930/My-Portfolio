@@ -259,15 +259,15 @@
 
                 <div class="about-stats">
                     <div class="stat">
-                        <h4 data-count="7">0</h4>
+                        <h4 data-count="7">7+</h4>
                         <p>Technical Projects</p>
                     </div>
                     <div class="stat">
-                        <h4 data-count="5">0</h4>
+                        <h4 data-count="5">5+</h4>
                         <p>Tech Stacks</p>
                     </div>
                     <div class="stat">
-                        <h4 data-count="1">0</h4>
+                        <h4 data-count="1">1+</h4>
                         <p>Years Coding</p>
                     </div>
                 </div>
@@ -906,12 +906,7 @@
                 });
             }
 
-            // About section numbers static on mobile
-            if (window.innerWidth <= 480) {
-                document.querySelectorAll('.about-stats h4[data-count]').forEach(el => {
-                    el.textContent = el.getAttribute('data-count') + '+';
-                });
-            }
+            // About section numbers are now static in HTML for all devices.
         });
         </script>
     
