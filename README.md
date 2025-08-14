@@ -3,9 +3,9 @@
 # 🚀 Prathamesh Gaikwad - Portfolio
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live%20Demo-red?style=for-the-badge&logo=vercel)](https://prathamesh-portfolio-09.netlify.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/)
 [![Email](https://img.shields.io/badge/Email-Contact-yellow?style=for-the-badge&logo=gmail)](mailto:prathamesh.github@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
 
 > **A modern, responsive portfolio showcasing full-stack development and AI/ML projects**  
 > Built with vanilla HTML, CSS, and JavaScript with smooth animations and professional design
@@ -247,6 +247,7 @@ Feel free to open issues or submit pull requests for improvements!
 **© 2025 Prathamesh Gaikwad. All rights reserved.**
 
 </div>
+
 
 
 
