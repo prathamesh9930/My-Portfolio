@@ -29,6 +29,99 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
+        <style>
+        @media (max-width: 480px) {
+            /* Navbar mobile menu fix */
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100vw;
+                background: var(--bg-primary, #18181b);
+                flex-direction: column;
+                z-index: 1000;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex !important;
+                flex-direction: column;
+                cursor: pointer;
+                z-index: 1100;
+            }
+            .nav-controls {
+                display: flex;
+                align-items: center;
+            }
+
+            /* About numbers static on mobile */
+            .about-stats h4[data-count]::after {
+                content: attr(data-count) "+";
+                display: inline;
+            }
+            .about-stats h4[data-count] {
+                color: inherit;
+                font-size: 2rem;
+                animation: none !important;
+            }
+            .about-stats h4[data-count]::before {
+                content: "";
+            }
+
+            /* Certification grid fix */
+            .certificates-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.5rem !important;
+                overflow-x: auto !important;
+            }
+            .certificate-card {
+                min-width: 0 !important;
+                width: 100% !important;
+                max-width: 140px !important;
+                padding: 0.5rem !important;
+                font-size: 0.85rem !important;
+                box-sizing: border-box !important;
+            }
+            .certificate-card h3 {
+                font-size: 1rem !important;
+            }
+            .certificate-card p {
+                font-size: 0.8rem !important;
+            }
+
+            /* Remove timeline line and dots in experience */
+            .timeline::before,
+            .timeline-marker {
+                display: none !important;
+            }
+
+            /* Skills section 2x2 grid for each category */
+            .skill-items.skills-grid-5 {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.5rem !important;
+                justify-items: center !important;
+            }
+            .skill-item {
+                min-width: 0 !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                padding: 0.5rem 0 !important;
+                font-size: 0.95rem !important;
+            }
+
+            /* Remove hero image animation and scroll indicator */
+            .animated-image,
+            .scroll-indicator {
+                animation: none !important;
+                transform: none !important;
+                display: none !important;
+            }
+        }
+        </style>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
@@ -783,6 +876,44 @@
     </footer>
 
     <script src="script.js" defer></script>
+        <script>
+        // Set dark theme as default on mobile
+        if (window.innerWidth <= 480) {
+            document.body.classList.add('dark-theme');
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hamburger menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+                });
+            }
+
+            // Theme toggle fix for all devices
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-theme');
+                    // Optionally update icon
+                    const icon = document.getElementById('theme-icon');
+                    if (icon) {
+                        icon.classList.toggle('fa-moon');
+                        icon.classList.toggle('fa-sun');
+                    }
+                });
+            }
+
+            // About section numbers static on mobile
+            if (window.innerWidth <= 480) {
+                document.querySelectorAll('.about-stats h4[data-count]').forEach(el => {
+                    el.textContent = el.getAttribute('data-count') + '+';
+                });
+            }
+        });
+        </script>
     
     <!-- Performance monitoring (optional - remove if not needed) -->
     <script>
