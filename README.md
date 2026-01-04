@@ -201,19 +201,7 @@ Visit: [https://my-portfolio-zlat.onrender.com/](https://my-portfolio-zlat.onren
 
 </div>
 
----
 
-## 📈 **GitHub Stats**
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=prathamesh9930&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=58A6FF&icon_color=58A6FF&text_color=8B949E)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=prathamesh9930&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=8B949E&langs_count=3&exclude_repo=My-Portfolio&exclude=Python)
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=prathamesh9930&theme=radical&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=58A6FF&currStreakNum=58A6FF&currStreakLabel=58A6FF&sideNums=58A6FF&sideLabels=58A6FF&dates=8B949E)
-
-</div>
 
 ---
 
