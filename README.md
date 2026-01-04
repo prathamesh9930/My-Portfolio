@@ -166,7 +166,7 @@
 
 <div align="center">
 
-[![Email](https://img.shields.io/badge/Email-prathamesh.github@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:prathamesh.github@gmail.com)
+[![Email](https://img.shields.io/badge/Email-prathameshgaikwad9137@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:prathameshgaikwad9137@gmail.com)
 [![Phone](https://img.shields.io/badge/Phone-%2B91%209324523783-green?style=for-the-badge&logo=phone)](tel:+919324523783)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-prathamesh--gaikwad-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/prathamesh-gaikwad-31317a319/)
 [![GitHub](https://img.shields.io/badge/GitHub-prathamesh9930-black?style=for-the-badge&logo=github)](https://github.com/prathamesh9930)
